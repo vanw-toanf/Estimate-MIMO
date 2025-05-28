@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch.nn.functional as F
 
-class ResNetMIMO(nn.Module):
+class CNN_MIMO(nn.Module):
     def __init__(self, Nt=2, Nr=2):
         super().__init__()
         # Input shape: (batch_size, 2, Nt, Nr) for Y (real/imag channels)

@@ -4,7 +4,7 @@ import torch
 import torch.optim as optim
 import torch.nn as nn
 from torch.utils.data import DataLoader
-from model import ResNetMIMO
+from model import CNN_MIMO
 from dataset import MIMODataset
 from torch.utils.data import random_split, DataLoader
 from pprint import pprint
@@ -40,7 +40,7 @@ def train(args):
     train_loader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, collate_fn=collate_fn)
     val_loader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=False, collate_fn=collate_fn)
 
-    model = ResNetMIMO(Nt=2, Nr=2).to(device)
+    model = CNN_MIMO(Nt=2, Nr=2).to(device)
     optimizer = optim.Adam(model.parameters(), lr=args.lr)
     criterion = nn.MSELoss()
     scheduler = MultiStepLR(optimizer, milestones=[30, 60, 90], gamma=0.1)

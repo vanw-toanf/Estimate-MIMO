@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import argparse
 from tqdm import tqdm
 from torch.utils.data import DataLoader
-from model import ResNetMIMO  # Changed to import ResNetMIMO
+from model import CNN_MIMO
 from dataset import MIMODataset
 from pprint import pprint
 from utils import collate_fn
@@ -467,7 +467,7 @@ def main(args):
     os.makedirs(args.output_dir, exist_ok=True)
 
     # Load the trained model
-    model = ResNetMIMO(Nt=args.Nt, Nr=args.Nr).to(device)  # Initialize ResNetMIMO
+    model = CNN_MIMO(Nt=args.Nt, Nr=args.Nr).to(device)  # Initialize ResNetMIMO
     # print("\nCurrent model keys:")
     # pprint(model.state_dict().keys())
     # print("-" * 30)
