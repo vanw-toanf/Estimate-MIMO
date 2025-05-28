@@ -1,0 +1,6 @@
+--- Channel Estimation Results at 10dB SNR ---
+Method     NMSE (dB)    MSE          R2 Score    
+----------------------------------------------
+CNN        -5.9188      0.2425       0.7480      
+LS         -8.7275      0.1014       0.8919      
+MMSE       -9.2750      0.0914       0.9027      
